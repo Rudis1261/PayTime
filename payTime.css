@@ -1,0 +1,118 @@
+/* Ensure that we are using BOX sizing if we can */
+.paytime-main .item *,
+.paytime-main .item > .item-header *,
+.paytime-main .item > .item-footer *,
+.paytime-main .item > .item-content *,
+.paytime-main * {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.paytime-main .item *:before,
+.paytime-main .item > .item-header *:before,
+.paytime-main .item > .item-footer *:before,
+.paytime-main .item > .item-content *:before,
+.paytime-main *:before,
+.paytime-main .item *:after,
+.paytime-main .item > .item-header *:after,
+.paytime-main .item > .item-footer *:after,
+.paytime-main .item > .item-content *:after,
+.paytime-main *:after {
+    -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+/* MAIN WINDOW CSS */
+.paytime-main {
+    display: block;
+    width: 100%;
+    margin: 100px auto;
+    background: #f1f1f9;
+    background: #ededed;
+    border: 1px solid #ccc;
+    height: 400px;
+    text-align: center;
+
+    box-shadow: 1px 1px 3px #ddd, 1px 1px 8px #ccc;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+/* INDIVUDUAL ITEMS */
+.paytime-main .item {
+    float: left;
+    width: 25%;
+    height: 400px;
+    display: block;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+
+    -webkit-transition: all 100ms linear;
+    -moz-transition: all 100ms linear;
+    -o-transition: all 100ms linear;
+    transition: all 100ms linear;
+
+    -ms-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+/* ACTIVE STATE */
+.paytime-main .item.active {
+    height: 420px;
+    width: 50%;
+    z-index: 10;
+    position: relative;
+    top: -10px;
+    background: #fff;
+    box-shadow: 0 0 1px #fff, 2px 2px 10px #bbb;
+    border: 1px solid rgb(199, 199, 199);
+}
+
+/* ITEM HEADER STYLE */
+.paytime-main .item.active > .item-header { background: whitesmoke; }
+.paytime-main .item > .item-header {
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+/* ITEM CONTENT STYLE */
+.paytime-main .item.active > .item-content {
+    height: 320px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+.paytime-main .item > .item-content {
+    position: relative;
+    height: 300px;
+    padding: 20px 10px 10px;
+    text-align: left;
+    overflow: hidden;
+    display: block;
+    font-size: 11px;
+    border-top: 1px solid #ccc;
+}
+
+/* ITEM FOOTER STYLE */
+.paytime-main .item.active > .item-footer {
+    box-shadow: 0 -7px 6px -4px #CFF8FF;
+    border-top: 1px solid #1C93D0;
+}
+.paytime-main .item.active > .item-footer a {
+    color: #1C93D0;
+}
+.paytime-main .item > .item-footer {
+    height: 60px;
+    line-height: 60px;
+    border-top: 1px solid #ccc;
+}
