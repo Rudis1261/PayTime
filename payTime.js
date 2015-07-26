@@ -20,7 +20,8 @@
             items.removeClass('active');
             $(this).addClass('active');
             return this;
-        };
+        });
+    }
 
     // Auto init via data
     if (dataInit.length > 0) {
